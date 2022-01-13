@@ -7,7 +7,9 @@ node_modules
 .vscode
 /build
 
-
+.env
+.env.development
+.env.production
 # cypress
 screenshots
 videos

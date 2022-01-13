@@ -1,100 +1,101 @@
 {
-  "name": "~TODO~",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:watch": "npm test -- --watch",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "ssr:node": "svelte-kit build"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.svelte$": [
-        "svelte-jester",
-        {
-          "preprocess": true
-        }
-      ],
-      "^.+\\.svg$": "jest-transform-stub",
-      "^.+\\.png$": "jest-transform-stub",
-      "^.+\\.(ts|tsx|js|jsx)$": [
-        "esbuild-jest"
-      ],
-      "^.+\\.ts$": "ts-jest"
-    },
-    "testPathIgnorePatterns": [
-      "<rootDir>/cypress/"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "svelte"
-    ],
-    "moduleNameMapper": {
-      "^\\$lib(.*)$": "<rootDir>/src/lib$1",
-      "^\\$app(.*)$": "<rootDir>/.svelte-kit/dev/runtime/app$1"
-    }
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.15.6",
-    "@rollup/plugin-json": "^4.1.0",
-    "@sveltejs/adapter-node": "^1.0.0-next.60",
-    "@sveltejs/adapter-static": "^1.0.0-next.13",
-    "@sveltejs/kit": "^1.0.0-next.210",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/svelte": "^3.0.0",
-    "@types/cookie": "^0.4.0",
-    "@types/jest": "^26.0.14",
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "@typescript-eslint/parser": "^4.19.0",
-    "babel-jest": "^26.5.2",
-    "cypress": "^8.5.0",
-    "datatables.net-dt": "^1.11.3",
-    "datatables.net-responsive-bs4": "^2.2.9",
-    "esbuild": "^0.13.4",
-    "esbuild-jest": "^0.5.0",
-    "eslint": "^7.22.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-svelte3": "^3.2.0",
-    "jest": "^26.5.2",
-    "jest-transform-stub": "^2.0.0",
-    "jest-transform-svelte": "^2.1.1",
-    "jquery": "^3.6.0",
-    "prettier": "~2.2.1",
-    "prettier-plugin-svelte": "^2.2.0",
-    "svelte": "^3.44.1",
-    "svelte-check": "^2.0.0",
-    "svelte-highlight": "^5.1.2",
-    "svelte-intersection-observer": "^0.8.0",
-    "svelte-jester": "^1.1.5",
-    "svelte-preprocess": "^4.9.4",
-    "svelte-time": "^0.4.0",
-    "svelte-web3": "^2.2.1",
-    "ts-jest": "^26.4.1",
-    "tslib": "^2.0.0",
-    "typescript": "^4.0.0",
-    "uplot": "^1.6.16"
-  },
-  "type": "module",
-  "dependencies": {
-    "@fontsource/fira-mono": "^4.2.2",
-    "@lukeed/uuid": "^2.0.0",
-    "@metamask/detect-provider": "^1.2.0",
-    "@tryghost/content-api": "^1.5.13",
-    "cookie": "^0.4.1",
-    "gulp": "^4.0.2",
-    "svelte-spinner": "^2.0.2",
-    "svelte-tradingview-widget": "^2.3.0",
-    "sveltestrap": "^4.2.1",
-    "web3": "^1.6.0"
-  }
+	"name": "~TODO~",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"preview": "svelte-kit preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"test:watch": "npm test -- --watch",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
+		"ssr:node": "svelte-kit build",
+		"postinstall": "cd theme && npm install && npx gulp build:dist"
+	},
+	"jest": {
+		"transform": {
+			"^.+\\.svelte$": [
+				"svelte-jester",
+				{
+					"preprocess": true
+				}
+			],
+			"^.+\\.svg$": "jest-transform-stub",
+			"^.+\\.png$": "jest-transform-stub",
+			"^.+\\.(ts|tsx|js|jsx)$": [
+				"esbuild-jest"
+			],
+			"^.+\\.ts$": "ts-jest"
+		},
+		"testPathIgnorePatterns": [
+			"<rootDir>/cypress/"
+		],
+		"moduleFileExtensions": [
+			"js",
+			"ts",
+			"svelte"
+		],
+		"moduleNameMapper": {
+			"^\\$lib(.*)$": "<rootDir>/src/lib$1",
+			"^\\$app(.*)$": "<rootDir>/.svelte-kit/dev/runtime/app$1"
+		}
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.15.6",
+		"@rollup/plugin-json": "^4.1.0",
+		"@sveltejs/adapter-node": "^1.0.0-next.60",
+		"@sveltejs/adapter-static": "^1.0.0-next.13",
+		"@sveltejs/kit": "^1.0.0-next.210",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/svelte": "^3.0.0",
+		"@types/cookie": "^0.4.0",
+		"@types/jest": "^26.0.14",
+		"@typescript-eslint/eslint-plugin": "^4.19.0",
+		"@typescript-eslint/parser": "^4.19.0",
+		"babel-jest": "^26.5.2",
+		"cypress": "^8.5.0",
+		"datatables.net-dt": "^1.11.3",
+		"datatables.net-responsive-bs4": "^2.2.9",
+		"esbuild": "^0.13.4",
+		"esbuild-jest": "^0.5.0",
+		"eslint": "^7.22.0",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-plugin-cypress": "^2.12.1",
+		"eslint-plugin-svelte3": "^3.2.0",
+		"jest": "^26.5.2",
+		"jest-transform-stub": "^2.0.0",
+		"jest-transform-svelte": "^2.1.1",
+		"jquery": "^3.6.0",
+		"prettier": "~2.2.1",
+		"prettier-plugin-svelte": "^2.2.0",
+		"svelte": "^3.44.1",
+		"svelte-check": "^2.0.0",
+		"svelte-highlight": "^5.1.2",
+		"svelte-intersection-observer": "^0.8.0",
+		"svelte-jester": "^1.1.5",
+		"svelte-preprocess": "^4.9.4",
+		"svelte-time": "^0.4.0",
+		"svelte-web3": "^2.2.1",
+		"ts-jest": "^26.4.1",
+		"tslib": "^2.0.0",
+		"typescript": "^4.0.0",
+		"uplot": "^1.6.16"
+	},
+	"type": "module",
+	"dependencies": {
+		"@fontsource/fira-mono": "^4.2.2",
+		"@lukeed/uuid": "^2.0.0",
+		"@metamask/detect-provider": "^1.2.0",
+		"@tryghost/content-api": "^1.5.13",
+		"cookie": "^0.4.1",
+		"gulp": "^4.0.2",
+		"svelte-spinner": "^2.0.2",
+		"svelte-tradingview-widget": "^2.3.0",
+		"sveltestrap": "^4.2.1",
+		"web3": "^1.6.0"
+	}
 }
